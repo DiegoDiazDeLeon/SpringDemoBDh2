@@ -2,6 +2,7 @@ package com.testDiego.demoDiego.controller;
 
 import java.util.List;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +15,7 @@ import com.testDiego.demoDiego.model.venta;
 import com.testDiego.demoDiego.service.ventaservice;
 
 @RestController
-@RequestMapping("/ventas")
+@RequestMapping("api/ventas")
 public class VentaController {
 
     private final ventaservice ventaservice;
@@ -22,7 +23,7 @@ public class VentaController {
     public VentaController(ventaservice ventaservice) {
         this.ventaservice = ventaservice;
     }
-
+    
     @GetMapping
     public List<venta> listar(){
         return ventaservice.listarVentas();

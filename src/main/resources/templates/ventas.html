@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ventas registradas</h1> <table border="1">
+         <thead>
+         <tr>
+             <th>ID</th>
+             <th>Producto</th>
+             <th>Cantidad</th>
+             <th>Precio</th>
+         </tr> 
+        </thead> 
+        <tbody> 
+            <tr th:each="venta : ${ventas}"> 
+                <td th:text="${venta.id}"></td> 
+                <td th:text="${venta.producto}"></td> 
+                <td th:text="${venta.cantidad}"></td> 
+                <td th:text="${venta.precio}"></td> 
+            </tr>
+        </tbody> 
+</body>
+</html>
